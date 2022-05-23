@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>URLねんが</title>
+  </head>
+  <body>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyAgOZLBIHOJaz_r1n4Vb17BBuk9Xpm0aB4",
+        authDomain: "kifunenga.firebaseapp.com",
+        databaseURL: "https://kifunenga.firebaseio.com",
+        projectId: "kifunenga",
+        storageBucket: "kifunenga.appspot.com",
+        messagingSenderId: "756508810526",
+        appId: "1:756508810526:web:64f64025e7f7a19803bd0f",
+        measurementId: "G-FKVKXNJDE5",
+        storageBucket: "gs://kifunenga.appspot.com",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <!-- <script src="js/init-firebase.js"></script> -->
+
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.7.0/firebase-ui-auth.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://www.gstatic.com/firebasejs/ui/4.7.0/firebase-ui-auth.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript">
+      // FirebaseUI config.
+      var uiConfig = {
+        signInSuccessUrl: "local.html",
+        signInOptions: [
+          // Leave the lines as is for the providers you want to offer your users.
+          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        ],
+        tosUrl: "<your-tos-url>",
+        // Privacy policy url/callback.
+        privacyPolicyUrl: function () {
+          window.location.assign("<your-privacy-policy-url>");
+        },
+      };
+
+      // Initialize the FirebaseUI Widget using Firebase.
+      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      // The start method will wait until the DOM is loaded.
+      ui.start("#firebaseui-auth-container", uiConfig);
+    </script>
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-12 col-sm-12">
+          <h1>ログインする or ログイン中です。</h1>
+        </div>
+        <div class="col-12 col-sm-12" id="firebaseui-auth-container"></div>
+      </div>
+    </div>
+  </body>
+</html>

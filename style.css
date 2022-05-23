@@ -1,0 +1,110 @@
+/* はがき回転 */
+.box{
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  position: relative;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: 1s;
+}
+.box img{
+  position: absolute;
+  width: 100%;
+  backface-visibility: hidden;
+  top: 0;
+  left: 0;
+}
+.box:active{
+  transform: rotateY( 180deg );
+}
+.box img:last-child{
+  transform: rotateY( 180deg );
+}
+/* はがき回転 ここまで */
+
+/* .box {
+  position: relative;
+}
+
+.G-box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+} */
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#image {
+  width: 300px;
+  height: auto;
+}
+
+
+
+
+
+
+/*--------------------------------------
+記事URLコピーボタン
+--------------------------------------*/
+.copy_main {
+  margin: 2.4em auto;
+  width: 80%;
+}
+.copy_btn {/*ボタンデザイン*/
+	padding: 15px 0;
+	border: solid 1px #555;/*ボタンの枠線*/
+	color: #555;/*ボタンの文字色*/
+	text-align: center;
+	font-size: 20px;
+	cursor: pointer;
+	background: #fff;/*ボタンの背景色*/
+	transition: .3s;
+}
+.copy_btn:hover {/*ホバーエフェクト*/
+	border: solid 1px #b5b5b5;/*ボタンの枠線*/
+	background: #b5b5b5;/*ボタンの背景色*/
+	color: #fff;/*ボタンの文字色*/
+}
+.copy_btn i:before {
+	display: inline-block;
+	margin-right: 8px;
+	content: '\f0c5';
+	font-size: 25px;
+	vertical-align: middle;
+}
+.copy_btn.copied {/*コピー成功時*/
+	border: solid 1px transparent;
+	background: #74d899;/*背景色*/
+	color: #fff;/*文字色*/
+	pointer-events: none;
+}
+.copy_btn.copied i:before {
+	content: '\f00c';
+}
+.copy_btn.not-copied {/*コピー失敗時*/
+	border: solid 1px transparent;
+	background: #d87f74;/*背景色*/
+	color: #fff;/*文字色*/
+	pointer-events: none;
+}
+.copy_btn.not-copied i:before {
+	content: '\f06a';
+}
+
+@media (max-width:575px) {/*スマホ表示*/
+.copy_btn span {
+	font-size: 16px;
+}
+.copy_btn.copied span {
+	font-size: 18px;
+}
+}

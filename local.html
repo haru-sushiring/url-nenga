@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,
+initial-scale=1.0"
+    />
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.7.0/firebase-ui-auth.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://www.gstatic.com/firebasejs/ui/4.7.0/firebase-ui-auth.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>URLねんが</title>
+    <style media="screen">
+      #disN-1,
+      #disN-2 {
+        display: none;
+      }
+      #disB {
+        display: block;
+      }
+    </style>
+    <!--
+TODO: Add SDKs for Firebase products that you want to use
+https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script>
+       // Your web app's Firebase configuration // For Firebase JS SDK v7.20.0 and later, measurementId is optional 
+      var firebaseConfig = { apiKey:
+      "AIzaSyAgOZLBIHOJaz_r1n4Vb17BBuk9Xpm0aB4", authDomain:
+      "kifunenga.firebaseapp.com", databaseURL: "https://kifunenga.firebaseio.com",
+      projectId: "kifunenga", storageBucket: "kifunenga.appspot.com",
+      messagingSenderId: "756508810526", appId:
+      "1:756508810526:web:64f64025e7f7a19803bd0f", measurementId: "G-FKVKXNJDE5",
+      storageBucket: "gs://kifunenga.appspot.com", }; // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-12 col-sm-12">
+          <h1>gooooooooooooooood!</h1>
+          <p>とりあえずログイン成功</p>
+        </div>
+        <div class="col-12 col-sm-12">
+          <progress value="0" max="100" id="uploader">0%</progress>
+          <input
+            name="img"
+            type="file"
+            value="upload"
+            accept="image/*"
+            id="fileButton"
+            class="dezing"
+          />
+        </div>
+        <div class="col-12 col-sm-12">
+          <img id="image" src="" class="rounded mx-auto d-block" />
+          <p id="preview">プレビューが表示されます。</p>
+        </div>
+        <div id="disN-1" class="col-12 col-sm-12">
+          <button class="btn btn-primary">公開する</button>
+          <p>公開ボタンを押すまでは公開されません。</p>
+          <div id="disN-2" class="col-12 col-sm-12">
+            <p>公開しました。</p>
+            <a id="url" class="btn btn-primary" href="" role="button"
+              >確認する</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div
+id="sign-in-status"></div> <div id="sign-in"></div> <pre
+id="account-details"></pre> -->
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-database.js"></script>
+    <script src="js/storage3.js"></script>
+    <script src="js/storage2.js"></script>
+  </body>
+</html>
+<!--
+type="module" -->
