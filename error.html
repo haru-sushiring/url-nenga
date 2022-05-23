@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>403</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="scss/test.css" />
+    <style>
+      .btn-flat-simple {
+        position: relative;
+        display: inline-block;
+        font-weight: bold;
+        padding: 0.25em 0.5em;
+        text-decoration: none;
+        color: #00bcd4;
+        background: #ececec;
+        transition: 0.4s;
+      }
+
+      .btn-flat-simple:hover {
+        background: #00bcd4;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>
+        4
+        <div class="lock">
+          <div class="top"></div>
+          <div class="bottom"></div>
+        </div>
+        3
+      </h1>
+      <h3>403エラー アクセス権限がありません</h3>
+      <p>このページはログインページ経由のみ開けます</p>
+      <p>トップページはこちら</p>
+      <a href="/index.html" class="btn-flat-simple">
+        <i class="fa fa-caret-right"></i> TOPページに戻る
+      </a>
+    </div>
+    <script src="js/403.js"></script>
+  </body>
+</html>
