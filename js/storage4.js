@@ -29,10 +29,6 @@ var storageRef = firebase.storage().ref();
 var DownloadURL;
 
 imageUrl.on("value", function (snapshot) {
-  // imageName = snapshot.child("imageName").val();
-  // imageName = snapshot.key;
-  // var Path = urlPath + "/imageName";
-  // console.log(Path);
   imageName = snapshot.child("imageName").val();
   console.log(imageName);
   // console.log(snapshot.val()); 配列で出力される{imageName: "js.png"}
@@ -50,34 +46,7 @@ imageUrl.on("value", function (snapshot) {
 
 console.log("出力できた");
 
-// file.name
-
 //画像切り替え
-// $("#image").on("click", function () {
-//   if ($(this).hasClass("change")) {
-//     $(this).attr("src", document.getElementById("image").src);
-//     $(this).toggleClass("change");
-//   } else {
-//     $(this).attr("src", "../nenga.jpg");
-//     $(this).toggleClass("change");
-//   }
-// });
-
-// const img = document.querySelector("#image");
-// img.addEventListener(
-//   "click",
-//   () => {
-//     if (!img.classList.contains("back")) {
-//       img.classList.add("back");
-//       img.src = "../nenga.jpg";
-//     } else {
-//       img.classList.add("back");
-//       img.src = DownloadURL;
-//     }
-//   },
-//   false
-// );
-
 function imgChange() {
   if (!img.classList.contains("back")) {
     img.classList.add("back");
@@ -89,19 +58,3 @@ function imgChange() {
 }
 const img = document.getElementById("image");
 img.addEventListener("click", imgChange, false);
-
-// function modifyText() {
-//   const t2 = document.getElementById("t2");
-//   if (t2.firstChild.nodeValue == "three") {
-//     t2.firstChild.nodeValue = "two";
-//   } else {
-//     t2.firstChild.nodeValue = "three";
-//   }
-// }
-// const el = document.getElementById("outside");
-// el.addEventListener("click", modifyText, false);
-
-// var preview = document.getElementById("preview");
-//     preview.remove();
-//     var display = document.getElementById("disN-1");
-//     display.id = "disB";
