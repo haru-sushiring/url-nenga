@@ -40,24 +40,6 @@ if (!input) {
   throw new Error("inputがありません！");
 }
 
-//ランダム値を生成
-// import { random } from "storage3.js";
-// var date = "ppp";
-// var random = random(date);
-
-//import { random } from "./storage3.js";
-// var hoo = new hooclass(20);
-// var val = hoo.getZ
-// var val = hoo + 1;
-// console.log(val); /* 20が出力される */
-// var ppp = random(222);
-// console.log(ppp);
-
-// const { random } = import("./storage3.js");
-// import { random } from "./storage3.js";
-// var ppp = random(222);
-// console.log(ppp);
-
 input.addEventListener("click", () => {
   var preview = document.getElementById("preview");
   preview.remove();
@@ -74,12 +56,7 @@ input.addEventListener("change", () => {
   var metadata = {
     contentType: "image/*",
   };
-  //const uploadTask = storageRef.child("images/" + file.name).put(file, metadata);
 
-  // const uploadTask = storageRef
-  //   .child("users/" + uid + "/" + file.name)
-  //   .put(file, metadata);
-  // console.log(uid);
   const uploadTask = storageRef
     .child("users/" + uid + "/" + file.name)
     .put(file, metadata);
@@ -154,8 +131,7 @@ button.addEventListener("click", () => {
   var metadata = {
     contentType: "image/*",
   };
-  //const uploadTask = storageRef.child("images/" + file.name).put(file, metadata);
-
+  
   const uploadTask = storageRef
     .child("image/" + urlPath + "/" + file.name)
     .put(file, metadata);
@@ -208,19 +184,6 @@ button.addEventListener("click", () => {
           break;
       }
     }
-    // function () {
-    //   writeImageData(urlPath, imageName);
-    // },
-    // function () {
-    //   var display = document.getElementById("disN-2");
-    //   display.id = "disB";
-    // }
-    // function () {
-    //   uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
-    //     console.log("File available at", downloadURL);
-    //     document.getElementById("image").src = downloadURL;
-    //   });
-    // }
   );
   writeImageData(urlPath, imageName);
 });
